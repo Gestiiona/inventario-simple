@@ -1,0 +1,6 @@
+# Datos del negocio y contraseña cifrada: nunca subir a GitHub
+data/
+*.tmp
+.env
+node_modules/
+.DS_Store

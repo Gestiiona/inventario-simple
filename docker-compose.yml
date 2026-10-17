@@ -1,0 +1,15 @@
+services:
+  inventariosimple:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      # Contraseña del panel (mínimo 8 caracteres). Cámbiala.
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Define ADMIN_PASSWORD}
+    volumes:
+      # Tus datos viven aquí y sobreviven a reinicios y actualizaciones
+      - inventariosimple-data:/app/data
+
+volumes:
+  inventariosimple-data:
